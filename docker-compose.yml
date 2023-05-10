@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  mongodb:
+    image: bitnami/mongodb:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+    volumes:
+      - ./volume:/bitnami/mongodb
