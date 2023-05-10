@@ -44,7 +44,7 @@ docker-compose down
 docker-compose ps
 ```
 
-## Connect URI
+## URI
 
 ```shell
 mongodb://root:pxMa6XMmXjQmFQbzfPn4eFYx@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.2
@@ -59,13 +59,15 @@ db.createUser({
 	user: "<username>", 
 	pwd: passwordPrompt(), 
 	roles: [
-    {role: "userAdmin", db: "<db_name>"},
+    		{role: "userAdmin", db: "<db_name>"},
 		{role: "userAdmin", db: "<db_name>"},
-    {role: "dbOwner", db: "<db_name>"},
+    		{role: "dbOwner", db: "<db_name>"},
 		{role: "dbAdmin", db: "<db_name>"},
 		{role: "readWrite", db: "<db_name>"}
 	]
 });
+```
 
+```shell
 db.createUser({user: "<username>", pwd: passwordPrompt(), roles: [{role: "userAdmin", db: "<db_name>"},{role: "userAdmin", db: "<db_name>"},{role: "dbOwner", db: "<db_name>"},{role: "dbAdmin", db: "<db_name>"},{role: "readWrite", db: "<db_name>"}]});
 ```
